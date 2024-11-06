@@ -4,7 +4,7 @@
 // - protoc             v3.21.12
 // source: service/product/v1/product.proto
 
-package srvproductv1
+package svcproductv1
 
 import (
 	context "context"

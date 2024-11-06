@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package service.category.v1;
+
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/service/category/v1;svccategoryv1";
+
+import "models/category/v1/category.proto";
+
+service Category {
+  rpc GetAll (GetAllRequest) returns (GetAllResponse);
+  rpc GetByID (GetByIDResponse) returns (models.category.v1.Category);
+  rpc GetByName (GetByNameResponse) returns (models.category.v1.Category);
+  rpc Create (CreateRequest) returns (CreateResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message GetAllRequest { }
+
+message GetAllResponse {
+  repeated models.category.v1.Category category = 1;
+}
+
+message GetByIDResponse {
+  int32 id = 1;
+}
+
+message GetByNameResponse {
+  string name = 1;
+}
+
+message CreateRequest {
+  string name = 1;
+  string image_url = 2;
+}
+
+message CreateResponse {
+  int32 id = 1;
+}
+
+message UpdateRequest {
+  int32 id = 1;
+  string name = 2;
+  string image_url = 3;
+}
+
+message UpdateResponse { }
+
+message DeleteRequest {
+  int32 id = 1;
+}
+
+message DeleteResponse { }

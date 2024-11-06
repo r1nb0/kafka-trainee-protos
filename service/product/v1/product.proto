@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package service.product.v1;
 
-option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/service/product/v1;srvproductv1";
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/service/product/v1;svcproductv1";
 
 import "models/product/v1/product.proto";
 import "models/pagination/v1/pagination.proto";

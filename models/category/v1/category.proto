@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package models.category.v1;
+
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/models/category/v1;categoryv1";
+
+message Category {
+  int32 id = 1;
+  string name = 2;
+  string image_url = 3;
+}
