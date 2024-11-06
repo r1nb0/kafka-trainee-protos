@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package service.product.v1;
+
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/service/product/v1;srvproductv1";
+
+import "models/product/v1/product.proto";
+import "models/pagination/v1/pagination.proto";
+
+service Product {
+  rpc GetAll (GetAllRequest) returns (GetAllResponse);
+  rpc GetByID (GetByIDRequest) returns (models.product.v1.Product);
+  rpc GeyByName (GetByNameRequest) returns (models.product.v1.Product);
+  rpc Save (SaveRequest) returns (SaveResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message GetAllRequest {
+  int32 page = 1;
+  int32 limit = 2;
+}
+
+message GetAllResponse {
+  repeated models.product.v1.Product product = 1;
+  models.pagination.v1.Pagination pagination = 2;
+}
+
+message GetByIDRequest {
+  int32 id = 1;
+}
+
+message GetByNameRequest {
+  string name = 1;
+}
+
+message SaveRequest {
+  string name = 1;
+  string description = 2;
+  string image_url = 3;
+  int32 count = 4;
+  float price = 5;
+  int32 category_id = 6;
+}
+
+message SaveResponse {
+  int32 id = 1;
+}
+
+message UpdateRequest {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string image_url = 4;
+  int32 count = 5;
+  float price = 6;
+  int32 category_id = 7;
+}
+
+message UpdateResponse { }
+
+message DeleteRequest {
+  int32 id = 1;
+}
+
+message DeleteResponse { }

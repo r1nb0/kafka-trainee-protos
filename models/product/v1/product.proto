@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package models.product.v1;
+
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/models/product/v1;productv1";
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string image_url = 4;
+  int32 count = 5;
+  float price = 6;
+  int32 category_id = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}

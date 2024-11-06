@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package models.pagination.v1;
+
+option go_package = "github.com/r1nb0/kafka-trainee-protos/gen/go/models/pagination/v1;paginationv1";
+
+message Pagination {
+  int32 page = 1;
+  int32 limit = 2;
+  int32 total_pages = 3;
+  int32 total_records = 4;
+}
